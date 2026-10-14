@@ -1,0 +1,44 @@
+@* Passo 03 - Criar as Views *@
+@* Se estou na view(index) de Produtos, qual sera a model 
+que devo usar??*@
+@model List<TechStoreMVC.Models.Produto>
+
+
+@{
+    ViewData[index: "Title"] = "Produtos";
+}
+<h1>
+    Lista de Produtos
+</h1>
+<table class="table table-striped">
+   <!-- Tipo da tabela acima com Boostrap -->
+    <thead>
+        <!-- Cabeçalho da tabela -->
+        <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Estoque</th>
+        </tr>
+    </thead>
+</table>
+
+    <!-- Imagine que a cada novo produto você tivesse que repetir isso 
+    toda a vez, seriam linhas sem fim. Por isso, usamos o foreach. 
+
+    O Foreach repete enquanto houver produtos existententes e, se
+    existir, eles serão exibidos para ti nessa tela. -->
+    <tbody>
+    @foreach(var produto in Model)
+    {
+        <tr>
+        <td>@produto.Id</td>
+        <td>@produto.Nome</td>
+        <td>R$ @produto.Preco.ToString(format: "F2")</td>
+        <td>@produto.Estoque</td>
+        <td>
+           <button class="btn btn-primary">Detalhes</button>
+        </td>
+        </tr>
+    }
+</tbody>
