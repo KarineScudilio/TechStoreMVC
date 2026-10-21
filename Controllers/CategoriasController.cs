@@ -5,7 +5,6 @@ using TechStoreMVC.Models;
 
 namespace TechStoreMVC.Controllers
 {
-    [Route("categorias")]
     public class CategoriasController : Controller
     {
         public ActionResult Index()

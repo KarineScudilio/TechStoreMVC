@@ -37,8 +37,20 @@ que devo usar??*@
         <td>R$ @produto.Preco.ToString(format: "F2")</td>
         <td>@produto.Estoque</td>
         <td>
-           <button class="btn btn-primary">Detalhes</button>
+           
+           <a asp-action="Details" asp-route-id="produto.id" class= "btn btn-primary">
+            |Details
+           </a>
+            <a asp-action="Create" asp-route-id="produto.id" class= "btn btn-primary">
+            |Create
+           </a>
+            <a asp-action="Delete" asp-route-id="produto.id" class= "btn btn-primary">
+            |Delete
+           </a>
+            <a asp-action="Edit" asp-route-id="produto.id" class= "btn btn-primary">
+            |Edit
+           </a>
         </td>
-        </tr>
+     </tr>
     }
 </tbody>
